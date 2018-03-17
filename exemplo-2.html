@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fon</title>
+    <style>
+      .lightbox img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .lightbox {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: black;
+        display: none;
+      }
+
+      .lightbox.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#" class="abrir">
+      <img width="220" class="view-image" src="img/img-01.jpg">
+    </a>
+    <div class="lightbox">
+      <img width="440">
+    </div>
+    <script>
+      document.querySelector('.abrir').addEventListener('click', function () {
+        var lightbox = document.querySelector('.lightbox');
+        lightbox.querySelector('img').src = this.querySelector('img').src
+
+        if (lightbox.classList.contains('active')) {
+          lightbox.classList.remove('active');
+        } else {
+          lightbox.classList.add('active');
+        }
+      });
+    </script>
+  </body>
+</html>

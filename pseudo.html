@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fon</title>
+    <style>
+      .teste {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 80px;
+        height: 80px;
+        background: red;
+        transform: translate(-50%, -50%);
+      }
+
+      .teste::after {
+        content: 'X';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 120px;
+        height: 240px;
+        background: blue;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="teste"></div>
+  </body>
+</html>

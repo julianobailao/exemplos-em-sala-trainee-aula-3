@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fon</title>
+    <style>
+      .container {
+        width: 1024px;
+        margin: 0 auto;
+      }
+
+      .carousel {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .carousel .view {
+        width: 500px;
+        overflow: auto;
+        transition: all .25s linear;
+      }
+
+      .carousel .view-items {
+        width: 2000px;
+        display: flex;
+        flex-direction: row;
+      }
+
+      .carousel .view-items .view-image {
+        width: 500px;
+        height: 500px;
+      }
+
+      .btn-arrow {
+        background: #fb4300;
+        border-radius: 4px;
+        padding: 10px 20px;
+        color: #fff;
+        border: none;
+        font-size: 22px;
+        text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+        box-shadow: 1px 1px 1px rgba(0,0,0,.5);
+        margin: 0 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="carousel">
+        <button class="btn-arrow anterior" type="button"><</button>
+        <div class="view">
+          <div class="view-items">
+            <img class="view-image" src="img/img-01.jpg">
+            <img class="view-image" src="img/img-02.jpg">
+            <img class="view-image" src="img/img-03.jpg">
+            <img class="view-image" src="img/img-04.jpg">
+          </div>
+        </div>
+        <button class="btn-arrow proximo" type="button">></button>
+      </div>
+    </div>
+
+    <div id="teste"></div>
+
+    <script>
+
+
+      var carousel = document.querySelector('.carousel');
+      var botoes = carousel.querySelectorAll('.btn-arrow');
+      var view = carousel.querySelector('.view');
+
+      console.log(botoes);
+
+      botoes.forEach(function (botao) {
+        botao.addEventListener('click', function () {
+          if (botao.classList.contains('anterior')) {
+            view.scrollLeft -= 500;
+          } else {
+            view.scrollLeft += 500;
+          }
+
+          console.log(view.scrollLeft);
+        });
+      });
+    </script>
+  </body>
+</html>
